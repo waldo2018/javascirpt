@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise</title>
+</head>
+<body>
+<script>
+    /*
+    下面的代码是使用函数瀑布的方式,函數瀑布的方式在以後的維護中和異常處理中都是非常
+    繁瑣的一件事情，會讓缩进格式变的非常多余
+    */
+    setTimeout(function(){
+        console.log("First");
+        setTimeout(function(){
+            console.log("Second");
+            setTimeout(function(){
+                console.log("Third");
+            }, 3000);
+        }, 4000);
+    }, 1000);
+    
+    /*
+     promise 将嵌套结构的代码转换成顺序结构，在执行完第一个之后继续执行第二个，阅读感提升。
+    */
+    new Promise(function(resolve, reject){
+        setTimeout(function(){
+            console.log("First");
+            resolve();
+        },1000);
+    }).then(function(){
+        return new Promise(function(resolve, reject){
+            setTimeout(function(){
+                console.log("Second");
+                resolve();
+            }, 2000);
+        })
+    }).then(function(){
+        new Promise((resolve, reject) => {
+            setTimeout(function(){
+                console.log("Third");
+                resolve();
+            }, 3000);
+        })
+    });
+</script>
+</body>
+</html>

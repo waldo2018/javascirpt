@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise2</title>
+</head>
+<body>
+<script>
+    /*
+    promise 有三个函数.then .catch .finally 这三个函数的参数都是function 函数。.then中的函数都会加到
+    promise的执行序列中，.catch则是在序列中执行发生错误的时候执行。.finally 在执行序列结束之后一定会执行。
+     */
+    new Promise((resolve, reject) =>{
+        var a = 0;
+        var b = 1;
+        if(b == 0) {
+            reject("Diveide zero");
+        } else {
+            resolve(a/b);
+        }
+    }).then(function(value){
+        console.log("a / b =" + value);
+    }).catch(function(err){
+        console.log(err);
+    }).finally(function(){
+        console.log("End");
+    });
+
+    // 第二种写法
+    function print(delay, message) {
+        return new Promise((resolve, reject) => {
+            setTimeout(function(){
+                console.log(message);
+                resolve();
+            }, delay);
+        });
+    }
+
+    print(1000, 'First').then(function(){return print(2000, 'second')}).then(function(){
+        print(3000, 'Third');
+    })
+</script>
+</body>
+</html>

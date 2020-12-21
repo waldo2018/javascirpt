@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom</title>
+</head>
+<body>
+<p>first</p>
+<p>second</p>
+<p>third</p>
+<p id="demo">this</p>
+<script>
+    var myCollection = document.getElementsByTagName('p');
+    document.getElementById('demo').innerHTML = myCollection.length;
+</script>
+</body>
+</html>
