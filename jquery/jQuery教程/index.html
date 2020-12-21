@@ -10,6 +10,16 @@
 <body>
 <p>click me</p>
 <script>
+    /**
+     * 會選取所有的p元素
+     * window.load 會等待所有的網頁元素加載完成之後進行加載，而且只能夠加載一次，第二次會覆蓋第一次加載的結果。
+     * $(function(){}) 會等待所有的dom元素加載完成之後進行加載，可以執行多次，第二次不會影響前一次的結果。
+     * jquery 語法
+     * 1. $(this).hide() 隱藏當前元素
+     * 2. $("p").hide() 隱藏所有p標籤元素
+     * 3. $("p.demo").hide() 隱藏所有class=demo的p標籤元素
+     * 4. $("#test").hide() 隱藏id=test的元素
+     */
     $(document).ready(function(){
         $("p").click(function(){
             $(this).hide();

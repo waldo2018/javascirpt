@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slide methods</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="div1" style="background-color: red">
+    <p>slide1</p>
+</div>
+
+<button id="btn1">slide up</button>
+<button id="btn2">slide down</button>
+<button id="btn3">slide Toggle</button>
+<script>
+    $(()=>{
+        $("#btn1").click(()=>{
+            $("#div1").slideUp();
+        });
+        $("#btn2").click(()=>{
+            $("#div1").slideDown();
+        });
+        $("#btn3").click(()=>{
+            $("#div1").slideToggle();
+        })
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        /**
+         * ajax 使用jQuery來通過post 或者 get 向後端發送請求，在獲取響應之後，在調用回調函數，在客戶端響應數據。基本原理還是
+         * 使用post或get來獲取。
+         */
+        $(()=>{
+            $("button").click(()=>{
+                $("#div1").load("try/demo_test.txt", function(responseTxt, statusTxt, xhr){
+                       if(statusTxt=="success"){
+                           alert("load over");
+                       }
+                       if(statusTxt=="error"){
+                           alert("Error: " + xhr.status() + ":" + xhr.statusText);
+                       }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="div1"><h2>使用 jQuery AJAX 修改文本内容</h2></div>
+<button>获取外部内容</button>
+</body>
+</html>

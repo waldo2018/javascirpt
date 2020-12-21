@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery效果</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+    <style>
+        div{
+            width: 130px;
+            height: 50px;
+            padding: 15px;
+            margin: 15px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<div>隐藏及设置回调函数</div>
+<p>display</p>
+<button class="hidebtn">隐藏</button>
+<script>
+    /**
+     * hide 的第一個參數爲speed，第二個參數爲過渡動畫，第三個參數爲回調函數。
+     * $(selector).action(speed, callback)
+     */
+    $(document).ready(function(){
+        $(".hidebtn").click(function(){
+            $("div").hide(1000,"linear",function(){
+                alert("Hide() 方法已完成!");
+            });
+        });
+    });
+
+    $(()=>{
+        $("p").click(()=>{
+            $(this).toggle(1000, ()=>{
+                alert('hide over');
+            });
+        });
+    });
+</script>
+</body>
+</html>
