@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript函数</title>
+</head>
+<body>
+<button onclick="myFunction('tom', 'jack')">click me</button><br>
+请输入a的值：<input id="a" type="text"><br>
+请输入b的值：<input id="b" type="text"><br>
+<button onclick="myFunction2()">计算</button>
+<p id="demo">显示结果</p>
+<script>
+    function myFunction(str1, str2){
+        alert(str1 + " and " + str2);
+    }
+    function myFunction3(a1, b1) {
+        return a1 + b1;
+    }
+    function myFunction2(){
+        let a = parseInt(document.getElementById("a").value);
+        let b = parseInt(document.getElementById("b").value);
+        document.getElementById('demo').innerHTML=myFunction3(a, b);
+    }
+
+</script>
+</body>
+</html>

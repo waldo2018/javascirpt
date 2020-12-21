@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript错误</title>
+</head>
+<body>
+<script>
+    var txt = "";
+    function message() {
+        try{
+            adddlert("welcome guest");
+        }catch(err){
+            txt = "本业有一个错误。\n\n";
+            txt += err.message;
+            alert(txt);
+        }
+    }
+</script>
+</body>
+</html>

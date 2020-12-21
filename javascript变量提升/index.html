@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript变量提升</title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<script>
+    // 实例1 变量在使用之后声明
+    x = 5;
+    elem = document.getElementById('demo');
+    elem.innerHTML = x;
+    var x;
+
+    // 实例2 变量在使用之前声明
+    var y;
+    y = 6;
+    elem2 = document.getElementById('demo2');
+    elem2.innerHTML = y;
+
+    // 实例3 变量在使用时进行类型提升
+    var a, b
+    a = 12;
+    b = 13;
+    document.getElementById('demo3').innerHTML = a + ' ' +b;
+</script>
+</body>
+</html>
